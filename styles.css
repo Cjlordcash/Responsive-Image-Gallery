@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+.wrapper {
+  max-width: 1200px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery .image {
+  padding: 5px;
+  width: calc(100% / 7);
+}
+.gallery .image img {
+  width: 100%;
+  border-radius: 3px;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+}
+.gallery .image:hover img {
+  transform: scale(1.1);
+}
+.preview {
+  position: fixed;
+  background-color: #4b88e4;
+  max-width: 650px;
+  width: 95%;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%) scale(0.8);
+  border-radius: 2px;
+  padding: 0 6px 6px 6px;
+  pointer-events: none;
+  opacity: 0;
+}
+.preview .details {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  justify-content: space-between;
+}
+.details .title {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.details .title p {
+  margin: 0 4px;
+}
+
+.details .title p .currentImg .total-img {
+  font-weight: 700;
+}
+.display {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.imageContainer .slidePrev > img {
+  width: 20px;
+}
+.preview .imageContainer {
+  width: 100%;
+  display: flex;
+}
+.imageContainer .slidePrev {
+  width: 100%;
+  display: flex;
+}
+.imageContainer .slidePrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.imageContainer .slidePrev.back-scroll {
+  margin-left: 10px;
+}
+.imageContainer .slidePrev.next-scroll {
+  right: 0;
+  margin-right: 10px;
+}
+
+.preview .imageContainer img {
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+}
+
+.curreentImg {
+  color: yellow;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 250px;
+  border-radius: 50%;
+  width: 20px;
+  background-color: blue;
+}
+
+@media (max-width: 1200px) {
+  .gallery .image {
+    width: calc(100% / 7);
+  }
+}
+@media (max-width: 1100px) {
+  .gallery .image {
+    width: calc(100% / 5);
+  }
+}
+@media (max-width: 1000px) {
+  .gallery .image {
+    width: calc(100% / 4);
+  }
+}
+@media (max-width: 900px) {
+  .gallery .image {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery .image {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 400px) {
+  .gallery .image {
+    padding: 4px;
+    width: 100%;
+  }
+}
